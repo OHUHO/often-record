@@ -1,0 +1,31 @@
+/* pages/date/tate.wxss */
+.background-image{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    z-index: -1;
+    opacity: 0.1;
+}
+.data-wrapper{
+    display: flex;
+    flex-direction: column;
+    /* margin: 180rpx 24rpx 0rpx 24rpx; */
+    margin: 320rpx 24rpx 0rpx 24rpx;
+}
+.title-wrapper{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 30rpx;
+}
+.bigTitle{
+    font-size: 38rpx;
+    font-weight: 600;
+}
+.describe{
+    font-size: 28rpx;
+    font-weight: 500rpx;
+    color: rgb(134, 133, 133);
+    margin-top: 4rpx;
+}
+

@@ -1,0 +1,49 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/record/record",
+    "pages/treasure/treasure",
+    "pages/center/center",
+    "pages/wechat/wechat",
+    "pages/recommend/recommend",
+    "pages/choiceness/choiceness",
+    "pages/card/card",
+    "pages/search/search",
+    "pages/date/tate",
+    "pages/subject/subject",
+    "pages/collection/collection",
+    "components/look-more/index"
+  ],
+  "window": {
+    "backgroundTextStyle": "dark",
+    "navigationBarBackgroundColor": "#000000",
+    "navigationBarTitleText": "京茶吉鹿",
+    "navigationBarTextStyle": "white"
+  },
+  "tabBar": {
+    "custom": true,
+    "color": "#515151",
+    "selectedColor": "#DAA520",
+    "borderStyle": "white",
+    "backgroundColor": "#000000",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": ""
+      },
+      {
+        "pagePath": "pages/record/record",
+        "text": ""
+      },
+      {
+        "pagePath": "pages/treasure/treasure",
+        "text": ""
+      },
+      {
+        "pagePath": "pages/center/center",
+        "text": ""
+      }
+    ]
+  },
+  "sitemapLocation": "sitemap.json"
+}

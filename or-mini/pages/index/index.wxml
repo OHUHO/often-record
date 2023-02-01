@@ -1,0 +1,52 @@
+<!--index.wxml-->
+<!-- 使用自定义 navBar -->
+<nav-bar-index navOpacity="{{navOpacity}}"></nav-bar-index>
+
+<!-- 背景图 -->
+<image class="background-image" src="/assets/background-image.jpg" mode="widthFix" />
+<!-- style="margin-top: {{menuMarginTop + menuHeight}}px;" -->
+
+<!-- 轮播图 -->
+<view class="swiper-box" bindtouchmove="tauchMove" bindtouchstart="tauchStart" bindtouchend="tauchEnd">
+	<view class="item-box {{item.zIndex==1?'none':''}}" wx:for="{{swiperList}}" wx:key="index"
+		style="--index:{{item.zIndex}};--left:{{item.mLeft}}">
+		<view class="swiper-item">
+			<image src="{{item.url}}" mode="aspectFill" wx:if="{{item.type=='image'}}">
+			</image>
+			<video src="{{item.url}}" autoplay loop muted show-play-btn="{{false}}" controls="{{false}}"
+				objectFit="cover" wx:if="{{item.type=='video'}}">
+			</video>
+		</view>
+	</view>
+</view>
+
+<!-- 每日推荐 -->
+<view class="daily-recommend">
+	<look-more title="每日推荐" 
+		describe="为您精心推荐" 
+		clickIndex="1">
+	</look-more>
+	<view class="content daily">
+		<view class="card" wx:for="{{cardList}}" wx:key="index" data-article="{{item}}" bindtap="handleClick">
+			<view class="card-item">
+				<image class="cover" src="{{item.imageUrl}}" mode="aspectFill"></image>
+				<view class="portrait-wrapper">
+					<image class="portrait-image" src="{{item.portrait}}" mode="aspectFill"></image>
+				</view>
+				<view class="card-author">{{item.author}}</view>
+				<view class="big-title">{{item.title}}</view>
+			</view>
+		</view>
+	</view>
+</view>
+
+<!-- 往期精选 -->
+<view class="old-best">
+	<look-more title="往期精选"
+		describe="为您精挑细选每一篇"
+		clickIndex="2">
+	</look-more>
+	<view class="content old">
+		<line-card oldList="{{oldList}}"></line-card>
+	</view>
+</view>

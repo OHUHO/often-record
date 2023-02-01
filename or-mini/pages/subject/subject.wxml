@@ -1,0 +1,6 @@
+<!--pages/subject/subject.wxml-->
+<nav-bar-common navTitle="{{navTitle}}"></nav-bar-common>
+
+<view class="subject-wrapper">
+    <line-card oldList="{{articles}}"></line-card>
+</view>

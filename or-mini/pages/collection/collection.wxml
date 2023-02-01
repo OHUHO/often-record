@@ -1,0 +1,9 @@
+<!--pages/collection/collection.wxml-->
+<nav-bar-common navTitle="我的收藏"></nav-bar-common>
+
+<view class="collection-wrapper">
+
+</view>
+
+
+

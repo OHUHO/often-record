@@ -1,0 +1,18 @@
+<!--components/line-card/line-card.wxml-->
+
+<view class="block" wx:for="{{oldList}}" wx:key="index" data-article="{{item}}" bindtap="handleClick">
+    <view class="block-title">{{item.title}}</view>
+    
+    <view wx:if="{{item.imageUrl}}" class="block-content-image">
+        <view class="block-content-image-left">
+            <view class="block-author">{{item.author}} | {{item.time}}</view>
+            <view class="block-content-text">{{item.describe}}</view>
+        </view>
+        <image class="block-content-image-right" src="{{item.imageUrl}}" mode="aspectFill"></image>
+    </view>
+    <view wx:else class="block-content">
+        <view class="block-author">{{item.author}} | {{item.time}}</view>
+        <text class="block-content-text">{{item.describe}}</text>
+    </view>
+    
+</view>

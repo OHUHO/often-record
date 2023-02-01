@@ -1,0 +1,58 @@
+/* components/line-card/line-card.wxss */
+.block {
+  background-color: rgba(145, 145, 145, 0.2);
+  margin: 30rpx 0;
+  padding: 20rpx;
+  border-radius: 20rpx;
+}
+.block:nth-child(1){
+  margin-top: 20rpx;
+}
+
+.block-title {
+  font-size: 32rpx;
+  font-size: 600;
+  color: rgb(211, 208, 208);
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+  overflow: hidden;
+  line-height: 66rpx;
+}
+
+.block-author {
+  font-size: 26rpx;
+  color: rgb(147, 144, 144);
+  margin-bottom: 16rpx;
+}
+
+.block-content-image {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.block-content-image-left {
+  display: flex;
+  flex-direction: column;
+  width: 999rpx;
+  margin-right: 10rpx;
+}
+
+.block-content-image-right {
+  height: 140rpx;
+  border-radius: 20rpx;
+}
+
+.block-content-text {
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+  font-size: 26rpx;
+  color: rgb(147, 144, 144);
+  line-height: 40rpx;
+}

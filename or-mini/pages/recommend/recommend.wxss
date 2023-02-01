@@ -1,0 +1,63 @@
+/* pages/recommend/recommend.wxss */
+page{
+    color: #ffffff;
+}
+.recommend-wrapper{
+    display: flex;
+    flex-direction: column;
+    /* background-color: aqua; */
+    margin-top: 180rpx;
+    /* height: 500rpx; */
+    margin: 180rpx 24rpx 0rpx 24rpx;
+}
+
+.header{
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	background-image: url("https://www.transparenttextures.com/patterns/cubes.png"),
+	/* linear-gradient(
+        to right top,
+        #cf4af3,
+        #e73bd7,
+        #f631bc,
+        #fd31a2,
+        #ff3a8b,
+        #ff4b78,
+        #ff5e68,
+        #ff705c,
+        #ff8c51,
+        #ffaa49,
+        #ffc848,
+        #ffe652
+	) */
+	linear-gradient(45deg,#4bc0c8,#c779d0,#feac5e)
+    ;
+	border-radius: 14rpx;
+	padding: 20rpx 20rpx;
+    height: 190rpx;
+    margin-bottom: 10rpx;
+}
+.info{
+    width: 440rpx;
+    height: 100%;
+    /* background-color: green; */
+    display: flex;
+    flex-direction: column;
+}
+.title{
+    font-size: 36rpx;
+    font-weight: 600;
+    margin-bottom: 10rpx;
+}
+.content{
+    font-size: 30rpx;
+    font-weight: 500;
+    color: #e3e0e0;
+
+}
+.image{
+    width: 200rpx;
+    height: 100%;
+    /* background-color: red; */
+}

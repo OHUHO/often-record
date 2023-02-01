@@ -1,0 +1,6 @@
+/* pages/collection/collection.wxss */
+.collection-wrapper{
+    display: flex;
+    flex-direction: column;
+    margin: 180rpx 24rpx 0rpx 24rpx;
+}

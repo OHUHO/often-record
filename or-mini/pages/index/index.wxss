@@ -1,0 +1,156 @@
+/**index.wxss**/
+page{
+  height: calc(100vh + 444rpx);
+}
+
+.background-image{
+  width: 100%;
+}
+
+.swiper-item image,
+.swiper-item video {
+  width: 100%;
+  display: block;
+  height: 100%;
+  margin: 0;
+  pointer-events: none;
+}
+
+image {
+  max-width: 100%;
+  display: inline-block;
+  position: relative;
+  z-index: 0;
+}
+
+.swiper-box {
+  height: 320rpx;
+  position: relative;
+  max-width: 750rpx;
+  overflow: hidden;
+  box-sizing: border-box;
+  /* margin-top: 90rpx; */
+  background-color: rgba(0, 0, 0, 0.1);
+  margin-top: -20rpx;
+}
+
+.swiper-box .item-box {
+  position: absolute;
+  width: 666rpx;
+  height: 380rpx;
+  top: 0;
+  bottom: 0;
+  /* left: 50%; */
+  left: 25.6%;
+  margin: auto;
+  transition: all 0.2s ease-in 0s;
+  /* opacity: 1; */
+  box-shadow: 0px 13rpx 12rpx rgba(0, 0, 0, .5);
+  border-radius: 15rpx;
+  overflow: hidden;
+}
+
+.swiper-box .item-box.none {
+  opacity: 0;
+}
+
+.swiper-box .item-box .swiper-item {
+  width: 100%;
+  height: 100%;
+  border-radius: 6rpx;
+  overflow: hidden;
+}
+
+
+.swiper-box .item-box {
+  transform: scale(calc(0.5 + var(--index) / 10));
+  margin-left: calc(var(--left) * 100rpx - 150rpx);
+  z-index: var(--index);
+}
+
+/* 公共部分 */
+.daily-recommend, 
+.old-best{
+  display: flex;
+  flex-direction: column;
+  color: #fff;
+}
+.content{
+  margin: 0 24rpx;
+}
+
+
+/* 每日推荐 */
+.daily{
+  display:flex;
+  flex-wrap: wrap;
+  margin: 0;
+  width: 100%;
+  justify-content: center;
+}
+.card{
+  /* background-color: purple; */
+  background-color: rgba(145, 145, 145, 0.2);
+  margin: 10rpx;
+  border-radius: 20rpx;
+  width: calc(50% - 40rpx);
+}
+.card:nth-child(3),
+.card:nth-child(4){
+  margin-top: 10rpx;
+}
+.card-item{
+  /* background-color: aqua; */
+  width: 100%;
+  height: 100%;
+}
+.card-item .cover{
+  width: 100%;
+  height: 140rpx;
+  border-radius: 20rpx 20rpx 0rpx 0rpx;
+}
+
+.portrait-wrapper{
+  position: relative;
+  flex-shrink: 0;
+  width: 66rpx;
+  top: -40rpx;
+  left: 266rpx;
+}
+.portrait-image{
+  width: 50rpx;
+  height: 50rpx;
+  border-radius: 50%;
+  border: 1px solid rgb(255, 255, 255);
+}
+.card-author{
+  /* background-color: aqua; */
+  margin-top: -60rpx;
+  margin-bottom: -10rpx;
+  font-size: 28rpx;
+  color: rgb(129, 127, 127);
+  padding: 0 16rpx;
+}
+.big-title{
+  font-size: 30rpx;
+  margin: 10rpx 0;
+  padding: 0 16rpx;
+  padding-bottom: 10rpx;
+  color: rgb(192, 189, 189);
+  line-height: 60rpx;
+  /* background-color: #fff; */
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+  overflow: hidden;
+}
+
+/* 往期精选 */
+.old{
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 244rpx;
+  /* background-color: #fff; */
+}
+

@@ -1,0 +1,13 @@
+<!--pages/date/tate.wxml-->
+<nav-bar-common navTitle="时间刻痕"></nav-bar-common>
+<image class="background-image" src="/assets/hihihihi.jpg"></image>
+
+<view class="data-wrapper">
+    <view class="title-wrapper">
+        <text class="bigTitle">{{articles.time}}</text>
+        <text class="describe">{{articles.describe}}</text>
+    </view>
+    <view>
+        <line-card oldList="{{articles.content}}"></line-card>
+    </view>
+</view>

@@ -1,0 +1,8 @@
+{
+  "usingComponents": {
+    "nav-bar-index":"/components/nav-bar-index/index",
+    "line-card":"/components/line-card/line-card",
+    "look-more":"/components/look-more/index"
+  },
+  "navigationStyle": "custom"
+}

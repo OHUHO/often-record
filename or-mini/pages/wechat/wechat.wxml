@@ -1,0 +1,12 @@
+<!--pages/wechat/wechat.wxml-->
+<!-- 使用自定义 navBar -->
+<nav-bar-common navTitle="微信公众号"></nav-bar-common>
+
+<image class="background-image" src="{{backgroundImage}}" mode="aspectFill"></image>
+<view class="main">
+    <view class="card-wrapper">
+        <image class="card" src="{{cardUrl}}" mode="aspectFill" bindtap="previewImage"></image>
+    </view>
+    <text class="describe">点击查看二维码大图</text>
+</view>
+

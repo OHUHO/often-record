@@ -1,0 +1,40 @@
+<!--pages/search/search.wxml-->
+<nav-bar-common navTitle="搜索历史"></nav-bar-common>
+
+<view class="search-wrapper">
+    <view class="search-box">
+        <view class="input-wrapper">
+            <image src="/assets/search.png" class="search-icon"></image>
+            <input type="text" 
+                placeholder="请输入搜索关键词" 
+                placeholder-class="place-holder" 
+                focus="true"
+                bindconfirm="getData"
+                value="{{search}}">
+            </input>
+        </view>
+        <view class="cancel" catchtap="clearInput">取消</view>
+    </view>
+
+    <view class="common">
+        <view class="title">热门搜索</view>
+        <view class="search">
+            <block wx:for="{{hotList}}" wx:key="index">
+                <view class="item color" data-index="{{index}}" catchtap="getSearch">{{item}}</view>
+            </block>
+        </view>
+
+        <view wx:if="{{list.length>0}}">
+            <view class="history">
+                <view class="title">搜索历史</view>
+                <view catchtap="clearHistory" class="clear">清空历史</view>
+            </view>
+
+            <view class="search">
+                <block wx:for="{{list}}" wx:key="index">
+                    <view class="item" data-index="{{index}}" catchtap="getSearchOne">{{item}}</view>
+                </block>
+            </view>
+        </view>
+    </view>
+</view>

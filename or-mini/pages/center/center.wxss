@@ -1,0 +1,106 @@
+/* pages/center/center.wxss */
+page{
+    display: flex;
+    overflow: hidden;
+    background-size: 100% 100%;
+    color: #fff;
+}
+.background-image{
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    z-index: -1;
+    left: 0;
+    bottom: 0;
+}
+
+.main{
+    width: 100%;
+}
+/* -----------------用户头像区域----------------- */
+.userinfo{
+    /* background-color: #fff; */
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-top: 250rpx;
+    width: 100%;
+    /* background-color: #fff; */
+}
+.portrait-wrapper{
+    width: 120rpx;
+    height: 120rpx;
+    border: 3rpx solid rgb(69, 69, 69);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 20rpx 0 24rpx;
+}
+.portrait{
+    width: 80rpx;
+    height: 80rpx;
+}
+.portrait-login{
+    width: 116rpx;
+    height: 116rpx;
+    border-radius: 50%;
+}
+.username-wrapper{
+    display: flex;
+    flex-direction: column;
+}
+.username{
+    font-size: 38rpx;
+    font-weight: 700;
+}
+.level{
+    font-size: 24rpx;
+    font-weight: 500;
+    color: rgb(106, 106, 106);
+    margin-top: 10rpx;
+}
+
+/* -----------------用户功能区-------------- */
+.manage-wrapper{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-top: 120rpx;
+}
+.manage{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    height: 110rpx;
+    background-color: rgba(63, 62, 62,0.6);
+    border-radius: 60rpx;
+    margin: 22rpx;
+    padding: 0 30rpx;
+}
+.left{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    font-size: 34rpx;
+    font-weight: 600;
+}
+.icon{
+    width: 44rpx;
+    height: 44rpx;
+}
+.title{
+    margin: 0 20rpx;
+    color: #fff;
+}
+
+.contcat{
+    padding: 0;
+    margin: 0;
+    width: 100%;
+  }
+  .contcat::after{
+    border: none;
+  }

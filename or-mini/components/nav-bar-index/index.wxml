@@ -1,0 +1,16 @@
+<!--components/nav-bar-index/index.wxml-->
+<!-- <view class="nav-bar-wrapper" style="background-color: rgba(0, 0, 0, {{navOpacity}})"> -->
+<view class="nav-bar-wrapper" style="background-color: rgba(0, 0, 0, {{navOpacity}})">
+	<view class="nav-bar"  
+		style="margin-top: {{menuMarginTop}}px; height: {{menuHeight}}px;"
+		>
+		<image class="logo-image" 
+			style="height: {{menuHeight}}px;"
+			src="/assets/navbar/logo.png" 
+			mode="aspectFit"/>
+		<view class="logo-title">
+			<text class="big">京茶吉鹿</text>
+			<text class="small">因分享.而美丽</text>
+		</view>
+	</view>	
+</view>

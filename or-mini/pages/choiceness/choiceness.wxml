@@ -1,0 +1,44 @@
+<!--pages/choiceness/choiceness.wxml-->
+<nav-bar-common navTitle="往期精选"></nav-bar-common>
+<view class="choiceness-wrapper">
+	<view class="search-box" bindtap="handleSearch">
+		<image src="/assets/search.png" class="search-icon"></image>
+		<text class="placeholder">请输入搜索关键词</text>
+	</view>
+
+	<view class="card">
+		<view class="card-text">
+			<text class="card-title">{{card.title}}</text>
+			<text class="card-describe">{{card.describe}}</text>
+		</view>
+	</view>
+
+	<view class="main">
+		<view class="left">
+			<block wx:for="{{list}}" wx:key="index">
+				<template wx:if="{{index%2==0}}" is="item" data="{{...item}}"></template>
+			</block>
+		</view>
+		<view class="right">
+			<block wx:for="{{list}}" wx:key="index">
+				<template wx:if="{{index%2==1}}" is="item" data="{{...item}}"></template>
+			</block>
+		</view>
+	</view>
+
+</view>
+
+<template name="item">
+	<view class="item" data-id="{{id}}"  bindtap="handleClick">
+		<image class="cover" src="{{imageUrl}}" mode="widthFix"></image>
+		<text class="title">{{title}}</text>
+		<view class="user">
+			<image class="portrait" src="{{avatar}}"></image>
+			<text class="name">{{name}}</text>
+			<view class="heart">
+				<text>❤ </text>
+				<text> {{num}}</text>
+			</view>
+		</view>
+	</view>
+</template>

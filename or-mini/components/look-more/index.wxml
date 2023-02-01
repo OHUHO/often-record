@@ -1,0 +1,11 @@
+<!--components/look-more/index.wxml-->
+<view class="row">
+    <view class="left">
+        <text class="big">{{title}}</text>
+        <text class="small">{{describe}}</text>
+    </view>
+    <view class="right" bindtap="lookMore">
+        <image class="img" src="/assets/look-more.png"></image>
+        <text class="look-more">查看更多</text>
+    </view>
+</view>

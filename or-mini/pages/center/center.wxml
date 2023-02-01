@@ -1,0 +1,44 @@
+<!--pages/center/center.wxml-->
+<image class="background-image" src="/assets/background-center.jpg" mode="aspectFill"></image>
+
+<view class="main">
+    <view class="userinfo" wx:if="{{userInfo == null}}" bindtap="getUserProfile">
+        <view class="portrait-wrapper">
+            <image class="portrait" src="/assets/default-portrait.png"></image>
+        </view>
+        <view class="username-wrapper">
+            <text class="username">微信用户 0417</text>
+            <text class="level">等级 : U12</text>
+        </view>
+    </view>
+
+    <view class="userinfo" wx:else>
+        <view class="portrait-wrapper">
+            <image class="portrait portrait-login" src="{{userInfo.portrait}}"></image>
+        </view>
+        <view class="username-wrapper">
+            <text class="username">{{userInfo.nickname}}</text>
+            <text class="level">等级 : U{{userInfo.level}}</text>
+        </view>
+    </view>
+
+    <view class="manage-wrapper">
+        <view class="manage" wx:for="{{list}}" wx:key="index" data-index="{{item.id}}" bindtap="hanleManage">
+            <view class="left">
+                <image class="icon" src="{{item.icon}}"></image>
+                <text class="title">{{item.title}}</text>
+            </view>
+            <image class="icon" src="/assets/right.png"></image>
+        </view>
+    
+        <button class="manage contact" open-type="contact" bindcontact="handleContact">
+            <view class="left">
+                <image class="icon" src="/assets/contact.png"></image>
+                <text class="title">联系作者</text>
+            </view>
+            <image class="icon" src="/assets/right.png"></image>
+        </button>
+
+    </view>
+
+</view>

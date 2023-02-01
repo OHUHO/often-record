@@ -1,0 +1,15 @@
+<!--pages/recommend/recommend.wxml-->
+<nav-bar-common navTitle="每日推荐"></nav-bar-common>
+
+<view class="recommend-wrapper">
+    <view class="header">
+        <view class="info">
+            <text class="title">{{ad.title}}</text>
+            <text class="content">{{ad.content}}</text>
+        </view>
+        <image class="image" src="{{ad.image}}" mode="aspectFill"></image>
+    </view>
+    <view>
+        <line-card oldList="{{oldList}}"></line-card>
+    </view>
+</view>

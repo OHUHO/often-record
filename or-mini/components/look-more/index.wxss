@@ -1,0 +1,51 @@
+/* components/look-more/index.wxss */
+.row {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin: 40rpx 24rpx;
+    height: 88rpx;
+    color: #ffffff;
+    /* background-color: #ffffff; */
+}
+
+.left {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+}
+
+.big {
+    font-size: 38rpx;
+    font-weight: 800;
+
+}
+
+.small {
+    font-size: 26rpx;
+    font-weight: 600;
+    color: rgb(135, 134, 134);
+}
+
+.right {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background-color: rgba(63, 62, 62,0.6);
+    /* background-color: rgba(145, 145, 145, 0.2); */
+    padding: 18rpx 24rpx;
+    border-radius: 50rpx;
+}
+
+.img {
+    width: 36rpx;
+    height: 36rpx;
+}
+
+.look-more {
+    font-size: 26rpx;
+    font-weight: 600;
+    margin-left: 8rpx;
+}

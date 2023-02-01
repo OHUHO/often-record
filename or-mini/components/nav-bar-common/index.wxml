@@ -1,0 +1,9 @@
+<!--components/nav-bar-common/index.wxml-->
+<view class="nav-bar-wrapper" >
+    <view class="nav-bar" style="margin-top: {{menuMarginTop}}px; height: {{menuHeight}}px;">
+        <view class="turn-wrapper" bindtap="navback">
+            <image class="turn" src="/assets/navbar/turn.png"></image>
+        </view>
+        <view class="title">{{navTitle}}</view>
+    </view>
+</view>

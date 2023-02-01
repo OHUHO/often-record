@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "nav-bar-common":"/components/nav-bar-common/index"
+  },
+  "navigationStyle": "custom"
+}
