@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.record.mapper.ArticleMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.record.entity.Article">
+        <id column="article_id" property="articleId" />
+        <result column="title" property="title" />
+        <result column="introduction" property="introduction" />
+        <result column="content" property="content" />
+        <result column="content_html" property="contentHtml" />
+        <result column="cover" property="cover" />
+        <result column="share_url" property="shareUrl" />
+        <result column="author_id" property="authorId" />
+        <result column="time_id" property="timeId" />
+        <result column="share_number" property="shareNumber" />
+        <result column="collect_number" property="collectNumber" />
+        <result column="view_number" property="viewNumber" />
+        <result column="sort" property="sort" />
+        <result column="status" property="status" />
+        <result column="is_delete" property="isDelete" />
+        <result column="create_time" property="createTime" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        article_id, title, introduction, content, content_html, cover, share_url, author_id, time_id, share_number, collect_number, view_number, sort, status, is_delete, create_time
+    </sql>
+
+</mapper>

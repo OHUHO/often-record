@@ -9,7 +9,7 @@ import java.util.Collections;
 
 public class FastAutoGeneratorTest {
     public static void main(String[] args) {
-        FastAutoGenerator.create("jdbc:mysql://localhost:3306/als?characterEncoding=utf-8&userSSL=false", "root", "jc951753")
+        FastAutoGenerator.create("jdbc:mysql://localhost:3306/often_record?characterEncoding=utf-8&userSSL=false", "root", "jc951753")
                 .globalConfig(builder -> {
                     builder.author("京茶吉鹿") // 设置作者
                             .enableSwagger() // 开启 swagger 模式
@@ -28,11 +28,22 @@ public class FastAutoGeneratorTest {
                 })
                 .strategyConfig(builder -> {
                     builder //##########################设置需要生成的表名#########################
-                            .addInclude("t_test")
+                            .addInclude("or_article")
+                            .addInclude("or_background")
+                            .addInclude("or_background_type")
+                            .addInclude("or_collect")
+                            .addInclude("or_label")
+                            .addInclude("or_relation_article_label")
+                            .addInclude("or_role")
+                            .addInclude("or_slideshow")
+                            .addInclude("or_subject")
+                            .addInclude("or_time")
+                            .addInclude("or_user")
+                            // .addInclude("or_")
 
                             //###################################################################
 
-                            .addTablePrefix("t_", "h_") // 设置过滤表前缀
+                            .addTablePrefix("t_", "or_") // 设置过滤表前缀
 
                             .entityBuilder()
                             .enableLombok() // 开启Lombok注解
