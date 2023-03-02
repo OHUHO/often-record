@@ -1,7 +1,10 @@
 package com.record.service;
 
+import com.record.dto.SlideshowDTO;
 import com.record.entity.Slideshow;
 import com.baomidou.mybatisplus.extension.service.IService;
+
+import java.util.List;
 
 /**
  * <p>
@@ -13,4 +16,10 @@ import com.baomidou.mybatisplus.extension.service.IService;
  */
 public interface SlideshowService extends IService<Slideshow> {
 
+
+    /**
+     * 查询所有的轮播图
+     * @return
+     */
+    List<SlideshowDTO> findAllSlideshow();
 }

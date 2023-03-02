@@ -8,25 +8,7 @@ Page({
     menuHeight: 0,
     navOpacity: 0,
 
-    swiperList: [
-      {
-        type: 'video',
-        url: 'https://static.51dh.com.cn/dbp/12/98/4494bd8a6e0fcd4a992f25a42bea28f8d1fb.mp4'
-      },
-      {
-        type: 'image',
-        url: '/assets/2.jpg',
-      },
-      {
-
-        type: 'image',
-        url: '/assets/3.jpg'
-      }, {
-
-        type: 'image',
-        url: '/assets/7.jpeg'
-      }
-    ],
+    swiperList: [],
 
     cardList:[
       {id:11,imageUrl:'/assets/7.jpeg',title:'欢迎访问我的Github空间',author:'OUHUO',portrait:'/assets/6.jpeg'},
@@ -46,12 +28,13 @@ Page({
   },
 
   onLoad(){
-    this.tauchSwiper('swiperList');
-
     this.setData({
       menuMarginTop: app.globalData.menuMarginTop,
       menuHeight: app.globalData.menuHeight
     })
+
+    // 获取轮播图数据
+    this.getSlideshow()
 	},
 	
   onShow() {
@@ -142,6 +125,22 @@ Page({
         swiperList: list
       })
     }
+  },
+
+  // ==================================================
+  getSlideshow(){
+    var that = this
+    wx.request({
+      url: app.serverUrl + '/findAllSlideshow',
+      method: 'GET',
+      success(res){
+        that.setData({
+          swiperList:res.data.data
+        })
+        that.tauchSwiper('swiperList');
+        console.log(res.data.data)
+      }
+    })
   }
 
 })

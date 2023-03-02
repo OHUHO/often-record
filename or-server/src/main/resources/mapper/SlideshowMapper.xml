@@ -6,6 +6,7 @@
     <resultMap id="BaseResultMap" type="com.record.entity.Slideshow">
         <id column="id" property="id" />
         <result column="url" property="url" />
+        <result column="type" property="type" />
         <result column="priority" property="priority" />
         <result column="creator_id" property="creatorId" />
         <result column="create_time" property="createTime" />
@@ -15,7 +16,7 @@
 
     <!-- 通用查询结果列 -->
     <sql id="Base_Column_List">
-        id, url, priority, creator_id, create_time, is_delete, remark
+        id, url, `type`, priority, creator_id, create_time, is_delete, remark
     </sql>
 
 </mapper>

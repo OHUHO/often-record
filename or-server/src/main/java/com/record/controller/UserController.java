@@ -3,6 +3,7 @@ package com.record.controller;
 import com.record.entity.User;
 import com.record.service.UserService;
 import com.record.utils.Result;
+import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -18,6 +19,7 @@ import org.springframework.web.bind.annotation.RestController;
  * @author 京茶吉鹿
  * @since 2023-03-01 22:40:37
  */
+@Api(tags = "用户")
 @RestController
 public class UserController {
 
