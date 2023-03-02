@@ -49,5 +49,10 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements Us
         return Result.fail("参数不能为空！");
     }
 
+    @Override
+    public User findUserByUserId(Integer authorId) {
+        return userMapper.selectById(authorId);
+    }
+
 
 }

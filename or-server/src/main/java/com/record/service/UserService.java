@@ -23,4 +23,14 @@ public interface UserService extends IService<User> {
      * @return
      */
     Result login(String code, String nickname, String portrait);
+
+
+    /**
+     * 通过用户id查询用户信息
+     * @param authorId
+     * @return
+     */
+    User findUserByUserId(Integer authorId);
+
+
 }

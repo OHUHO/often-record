@@ -38,6 +38,6 @@ public class SlideshowController {
         return Result.success(list);
     }
 
-    
+
 
 }
