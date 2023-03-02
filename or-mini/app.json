@@ -12,6 +12,7 @@
     "pages/date/tate",
     "pages/subject/subject",
     "pages/collection/collection",
+    "pages/chooseInfo/chooseInfo",
     "components/look-more/index"
   ],
   "window": {

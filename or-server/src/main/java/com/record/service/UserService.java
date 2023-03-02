@@ -2,6 +2,7 @@ package com.record.service;
 
 import com.record.entity.User;
 import com.baomidou.mybatisplus.extension.service.IService;
+import com.record.utils.Result;
 
 /**
  * <p>
@@ -13,4 +14,13 @@ import com.baomidou.mybatisplus.extension.service.IService;
  */
 public interface UserService extends IService<User> {
 
+
+    /**
+     * 微信授权登录
+     * @param code
+     * @param nickname
+     * @param portrait
+     * @return
+     */
+    Result login(String code, String nickname, String portrait);
 }

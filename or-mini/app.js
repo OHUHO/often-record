@@ -1,7 +1,7 @@
 // app.js
 App({
 
-  serverUrl:'http://localhost:8888/user',
+  serverUrl:'http://localhost:8848/user',
 
   onLaunch() {
     this.getNavBarInfo()

@@ -2,7 +2,7 @@
 <image class="background-image" src="/assets/background-center.jpg" mode="aspectFill"></image>
 
 <view class="main">
-    <view class="userinfo" wx:if="{{userInfo == null}}" bindtap="getUserProfile">
+    <view class="userinfo" wx:if="{{userInfo == null}}" bindtap="chooseUserInfo">
         <view class="portrait-wrapper">
             <image class="portrait" src="/assets/default-portrait.png"></image>
         </view>
