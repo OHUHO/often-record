@@ -37,6 +37,9 @@ public class Slideshow implements Serializable {
     @ApiModelProperty("优先级（从1递减）")
     private Integer priority;
 
+    @ApiModelProperty("类型为图片或视频")
+    private Integer type;
+
     @ApiModelProperty("创建者id")
     private Long creatorId;
 

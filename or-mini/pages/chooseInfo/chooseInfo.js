@@ -60,8 +60,8 @@ Page({
       
 
       // 不安全
-      SecretId: 'AKIDqWp2B7rQnzzqY4OXUHtJbgZGl4B6pLgo',
-      SecretKey: 'DG6jAQULzS6aqsfMuJWYO4av41oNipjR',
+      // SecretId: 'AKIDqWp2B7rQnzzqY4OXUHtJbgZGl4B6pLgo',
+      // SecretKey: 'DG6jAQULzS6aqsfMuJWYO4av41oNipjR',
     });
 
     // 生成唯一的标识，用作下面的 图片名称
