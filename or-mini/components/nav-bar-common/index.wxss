@@ -3,8 +3,8 @@
 	position: fixed;
 	top: 0;
 	z-index: 999999999;
-    width: calc(100% - 190rpx);
-    /* width: 100%; */
+    /* width: calc(100% - 190rpx); */
+    width: 100%;
 }
 .nav-bar{
 	color: #ffffff;
@@ -32,11 +32,12 @@
     height: 40rpx;
 }
 .title{
-    width: 200rpx;
+    width: 100%;
     position: absolute;
-    left: 50%;
+    z-index: -1;
     bottom: auto;
     font-size: 38rpx;
     font-weight: 700;
+    text-align: center;
 }
 
