@@ -52,7 +52,23 @@ public class ArticleServiceImpl extends ServiceImpl<ArticleMapper, Article> impl
         return tranArticle(articles);
     }
 
-    
+    @Override
+    public List<ArticleDTO> selectArticlesByTimeId(Long timeId) {
+        List<Article> articles = articleMapper.selectList(
+                new LambdaQueryWrapper<Article>()
+                        .eq(Article::getTimeId, timeId)
+        );
+        return tranArticle(articles);
+    }
+
+
+    /**
+     * <p>
+     *     将 List<Article> 转换为 List<ArticleDTO>
+     * </p>
+     * @param articles
+     * @return
+     */
     private List<ArticleDTO> tranArticle(List<Article> articles){
         List<ArticleDTO> articleDTOS = new ArrayList<>();
         if (articles.size() > 0){

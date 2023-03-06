@@ -1,4 +1,6 @@
 // pages/record/record.js
+const app = getApp()
+var pageIndex = 1
 Page({
 
   /**
@@ -75,7 +77,12 @@ Page({
         {id:5,author:'我不是程序员',time:'三个月前',author:'京茶吉鹿',imageUrl:'/assets/7.jpeg',title:'低代码快速开发，没想到小程序还可以这么玩儿',describe:'测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数'},
       ]
     },
-  ]
+    ],
+    loadMOreText: '加载更多',
+
+  },
+  onLoad(){
+    this.getList(1)
   },
 
   onShow() {
@@ -102,5 +109,29 @@ Page({
       })
   },
 
+  onReachBottom(){
+    pageIndex += 1;
+    console.log(pageIndex)
+    this.getList(pageIndex)
+  },
+
+  getList(pageIndex){
+    var that = this;
+    wx.request({
+      url: app.serverUrl + '/getRecordList?pageIndex='+ pageIndex,
+      method: 'POST',
+      success(res){
+        if(res.data.data.length > 0){
+          that.setData({
+            list: this.data.list.concat(res.data.data)
+          })
+        }else{
+          that.setData({
+            loadMOreText:'没有数据了'
+          })
+        }
+      }
+    })
+  }
 
 })

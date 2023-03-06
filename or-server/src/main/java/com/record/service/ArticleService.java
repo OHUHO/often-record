@@ -29,4 +29,12 @@ public interface ArticleService extends IService<Article> {
      * @return
      */
     List<ArticleDTO> findArticleOderByCollect();
+
+
+    /**
+     * 通过timeId查询文章list
+     * @param timeId
+     * @return
+     */
+    List<ArticleDTO> selectArticlesByTimeId(Long timeId);
 }
