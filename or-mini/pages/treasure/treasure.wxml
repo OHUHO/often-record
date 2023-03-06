@@ -7,7 +7,7 @@
 </view>
 
 <view class="card-wrapper">
-    <view class="card" wx:for="{{list}}" wx:key="index" data-subject="{{item.subject}}" bindtap="handleClick">
+    <view class="card" wx:for="{{list}}" wx:key="index" data-name="{{item.name}}" bindtap="handleClick">
         <image class="card-image" src="{{item.cover}}" mode="aspectFill"></image>
         <view class="card-text">
             <text class="card-text-big">{{item.name}}</text>

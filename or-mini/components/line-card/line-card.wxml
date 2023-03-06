@@ -5,14 +5,14 @@
     
     <view wx:if="{{item.cover}}" class="block-content-image">
         <view class="block-content-image-left">
-            <view class="block-author">{{item.nickname}} | {{item.time}}</view>
+            <view class="block-author">{{item.nickname}} | {{item.createTime}}</view>
             <view class="block-content-text">{{item.introduction}}</view>
         </view>
         <image class="block-content-image-right" src="{{item.cover}}" mode="aspectFill"></image>
     </view>
     <view wx:else class="block-content">
-        <view class="block-author">{{item.nickname}} | {{item.time}}</view>
-        <text class="block-content-text">{{item.describe}}</text>
+        <view class="block-author">{{item.nickname}} | {{item.createTime}}</view>
+        <text class="block-content-text">{{item.introduction}}</text>
     </view>
     
 </view>

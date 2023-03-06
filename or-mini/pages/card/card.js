@@ -5,7 +5,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    article:{id:1,author:'作者名',imageUrl:'/assets/hihihihi.jpg',title:'文章的标题',describe:'文章的描述，这是一段关于文章的描述内容，文章的描述，这是一段关于文章的描述内容，文章的描述，这是一段关于文章的描述内容'},
+    article:{},
     id:-1,
     isCollection: false
   },
@@ -24,7 +24,7 @@ Page({
   // 复制文章地址
   copyUrl(){
     wx.setClipboardData({
-      data: this.data.article.author,
+      data: this.data.article.nickname,
       success (res) {
         wx.hideToast()
         wx.getClipboardData({
