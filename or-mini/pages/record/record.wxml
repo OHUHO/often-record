@@ -22,11 +22,11 @@
         </view>
         <view class="step-main">
             <scroll-view class="scroll-view" scroll-x>
-                <view class="card" wx:for="{{item.content}}" wx:key="index" wx:for-item="content">
-                    <view class="card-item" data-article="{{content}}" bindtap="handleClick">
-                        <image class="card-image" wx:if="{{content.imageUrl == ''}}" src="/assets/not-image.png" mode="aspectFit"></image>
-                        <image class="card-image" wx:else src="{{content.imageUrl}}" mode="aspectFill"></image>
-                        <view class="card-title">{{content.title}}</view>
+                <view class="card" wx:for="{{item.articles}}" wx:key="index" wx:for-item="article">
+                    <view class="card-item" data-article="{{article}}" bindtap="handleClick">
+                        <image class="card-image" wx:if="{{article.cover == ''}}" src="/assets/not-image.png" mode="aspectFit"></image>
+                        <image class="card-image" wx:else src="{{article.cover}}" mode="aspectFill"></image>
+                        <view class="card-title">{{article.title}}</view>
                     </view>
                 </view>
             </scroll-view>

@@ -1,6 +1,6 @@
 package com.record.service.impl;
 
-import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
+
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.record.dto.ArticleDTO;
@@ -34,7 +34,7 @@ public class TimeServiceImpl extends ServiceImpl<TimeMapper, Time> implements Ti
     @Autowired
     private ArticleService articleService;
 
-    private static final Integer PAGE_SIZE = 5;
+    private static final Integer PAGE_SIZE = 4;
 
 
     @Override

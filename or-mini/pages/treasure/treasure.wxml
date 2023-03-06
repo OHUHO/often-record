@@ -8,10 +8,10 @@
 
 <view class="card-wrapper">
     <view class="card" wx:for="{{list}}" wx:key="index" data-subject="{{item.subject}}" bindtap="handleClick">
-        <image class="card-image" src="{{item.imageUrl}}" mode="aspectFill"></image>
+        <image class="card-image" src="{{item.cover}}" mode="aspectFill"></image>
         <view class="card-text">
-            <text class="card-text-big">{{item.title}}</text>
-            <text class="card-text-small">{{item.describe}}</text>
+            <text class="card-text-big">{{item.name}}</text>
+            <text class="card-text-small">{{item.remark}}</text>
         </view>
     </view>
 </view>
