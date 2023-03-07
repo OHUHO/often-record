@@ -68,13 +68,16 @@ public class ArticleServiceImpl extends ServiceImpl<ArticleMapper, Article> impl
     }
 
     @Override
-    public ArticleDTO selectArticleByArticleId(Long articleId) {
+    public ArticleDTO selectArticleByArticleIdAndUserId(Long articleId, Long userId) {
         Article article = articleMapper.selectById(articleId);
         if (article != null){
             // 通过用户id查询用户信息
             User user = userService.selectUserByUserId(article.getAuthorId());
             // 通过用户id和文章id查询用户是否喜欢该文章
-            Collect collect = collectService.selectCollectByArticleIdAndUserId(articleId,article.getAuthorId());
+            Collect collect = null;
+            if (userId != 0){
+                collect = collectService.selectCollectByArticleIdAndUserId(articleId,userId);
+            }
 
             ArticleDTO dto = new ArticleDTO();
             dto.setArticleId(article.getArticleId())

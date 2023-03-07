@@ -31,11 +31,11 @@ public class CollectServiceImpl extends ServiceImpl<CollectMapper, Collect> impl
 
 
     @Override
-    public Collect selectCollectByArticleIdAndUserId(Long articleId, Long authorId) {
+    public Collect selectCollectByArticleIdAndUserId(Long articleId, Long userId) {
         return collectMapper.selectOne(
                 new LambdaQueryWrapper<Collect>()
                         .eq(Collect::getArticleId,articleId)
-                        .eq(Collect::getUserId,authorId)
+                        .eq(Collect::getUserId,userId)
         );
     }
 

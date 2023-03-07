@@ -17,10 +17,10 @@ public interface CollectService extends IService<Collect> {
     /**
      * 通过文章id和用户id查询用户的收藏信息
      * @param articleId
-     * @param authorId
+     * @param userId
      * @return
      */
-    Collect selectCollectByArticleIdAndUserId(Long articleId, Long authorId);
+    Collect selectCollectByArticleIdAndUserId(Long articleId, Long userId);
 
     /**
      * 文章点赞/取消点赞操作

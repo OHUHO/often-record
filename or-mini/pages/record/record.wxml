@@ -9,7 +9,7 @@
 </view>
 
 <view class="step-wrapper">
-    <view class="step" wx:for="{{list}}" wx:key="index">
+    <view class="step" wx:for="{{list}}" wx:key="index"  wx:if="{{item.articles.length > 0}}">
         <view class="circle"></view>
         <view class="row">
             <view class="time-info">

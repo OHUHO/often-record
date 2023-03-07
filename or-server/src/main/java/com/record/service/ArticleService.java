@@ -40,11 +40,12 @@ public interface ArticleService extends IService<Article> {
 
 
     /**
-     * 通过文章卡片id查找文章信息
+     * 通过文章卡片id和用户id查找文章信息
      * @param articleId
+     * @param userId
      * @return
      */
-    ArticleDTO selectArticleByArticleId(Long articleId);
+    ArticleDTO selectArticleByArticleIdAndUserId(Long articleId, Long userId);
 
     /**
      * 文章收藏加一

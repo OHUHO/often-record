@@ -47,10 +47,10 @@ public class ArticleController {
         return Result.success(list);
     }
 
-    @ApiOperation(value = "通过文章卡片id查找文章")
-    @GetMapping("/findArticleByArticleId")
-    public Result findArticleByArticleId(@RequestParam Long articleId){
-        ArticleDTO article = articleService.selectArticleByArticleId(articleId);
+    @ApiOperation(value = "通过文章id和用户id查找文章")
+    @GetMapping("/findArticleByArticleIdAndUserId")
+    public Result findArticleByArticleIdAndUserId(@RequestParam Long articleId, @RequestParam Long userId){
+        ArticleDTO article = articleService.selectArticleByArticleIdAndUserId(articleId,userId);
         return Result.success(article);
     }
 
