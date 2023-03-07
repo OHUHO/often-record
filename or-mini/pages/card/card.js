@@ -1,4 +1,5 @@
 // pages/card/card.js
+const app = getApp()
 Page({
 
   /**
@@ -14,11 +15,26 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad(options) {
-    var article = options.article
-    console.log(JSON.parse(article))
-    this.setData({
-      article: JSON.parse(article)
+    var articleId = options.articleId
+    console.log(articleId)
+    
+    this.getArticleCardByArticleId(articleId)
+  },
+
+  getArticleCardByArticleId(articleId){
+    var that = this
+    wx.request({
+      url: app.serverUrl + "/findArticleByArticleId?articleId=" + articleId,
+      method:'GET',
+      success(res){
+        if(res){
+          that.setData({
+            article: res.data.data
+          })
+        }
+      }
     })
+
   },
 
   // 复制文章地址

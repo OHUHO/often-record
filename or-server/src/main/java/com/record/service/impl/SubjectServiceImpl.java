@@ -32,5 +32,6 @@ public class SubjectServiceImpl extends ServiceImpl<SubjectMapper, Subject> impl
                 new LambdaQueryWrapper<Subject>()
                         .eq(Subject::getStatus, 0)
         );
+
     }
 }

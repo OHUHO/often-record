@@ -51,7 +51,7 @@ public class Article implements Serializable {
     private String shareUrl;
 
     @ApiModelProperty("文章作者id")
-    private Integer authorId;
+    private Long authorId;
 
     @ApiModelProperty("时间线id")
     private Integer timeId;

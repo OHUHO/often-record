@@ -24,7 +24,7 @@
             <image class="option-image" src="/assets/poster.png"></image>
         </view>
         <view class="option" bindtap="handleCollection">
-            <image class="option-image" wx:if="{{!isCollection}}" src="/assets/collection.png"></image>
+            <image class="option-image" wx:if="{{!article.isLike}}" src="/assets/collection.png"></image>
             <image class="option-image" wx:else src="/assets/collected.png"></image>
         </view>
         

@@ -50,7 +50,7 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements Us
     }
 
     @Override
-    public User findUserByUserId(Integer authorId) {
+    public User selectUserByUserId(Long authorId) {
         return userMapper.selectById(authorId);
     }
 

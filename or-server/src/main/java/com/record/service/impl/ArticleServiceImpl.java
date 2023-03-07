@@ -3,10 +3,12 @@ package com.record.service.impl;
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.record.dto.ArticleDTO;
 import com.record.entity.Article;
+import com.record.entity.Collect;
 import com.record.entity.User;
 import com.record.mapper.ArticleMapper;
 import com.record.service.ArticleService;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
+import com.record.service.CollectService;
 import com.record.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -32,9 +34,12 @@ public class ArticleServiceImpl extends ServiceImpl<ArticleMapper, Article> impl
     @Autowired
     private UserService userService;
 
+    @Autowired
+    private CollectService collectService;
+
 
     @Override
-    public List<ArticleDTO> findArticleFour() {
+    public List<ArticleDTO> selectArticleFour() {
         List<Article> articles = articleMapper.selectList(
                 new LambdaQueryWrapper<Article>()
                         .orderByDesc(Article::getSort)
@@ -44,10 +49,11 @@ public class ArticleServiceImpl extends ServiceImpl<ArticleMapper, Article> impl
     }
 
     @Override
-    public List<ArticleDTO> findArticleOderByCollect() {
+    public List<ArticleDTO> selectArticleOderByCollect() {
         List<Article> articles = articleMapper.selectList(
                 new LambdaQueryWrapper<Article>()
                         .orderByDesc(Article::getCollectNumber)
+                        .last("limit 4")
         );
         return tranArticle(articles);
     }
@@ -59,6 +65,32 @@ public class ArticleServiceImpl extends ServiceImpl<ArticleMapper, Article> impl
                         .eq(Article::getTimeId, timeId)
         );
         return tranArticle(articles);
+    }
+
+    @Override
+    public ArticleDTO selectArticleByArticleId(Long articleId) {
+        Article article = articleMapper.selectById(articleId);
+        if (article != null){
+            // 通过用户id查询用户信息
+            User user = userService.selectUserByUserId(article.getAuthorId());
+            // 通过用户id和文章id查询用户是否喜欢该文章
+            Collect collect = collectService.selectCollectByArticleIdAndUserId(articleId,article.getAuthorId());
+
+            ArticleDTO dto = new ArticleDTO();
+            dto.setArticleId(article.getArticleId())
+                    .setTitle(article.getTitle())
+                    .setCover(article.getCover())
+                    .setIntroduction(article.getIntroduction())
+                    .setAuthorId(user.getUserId())
+                    .setNickname(user.getNickname())
+                    .setPortrait(user.getPortrait())
+                    .setShareUrl(article.getShareUrl())
+                    .setIsLike(collect != null)
+                    .setCreateTime(article.getCreateTime());
+
+            return dto;
+        }
+        return null;
     }
 
 
@@ -75,7 +107,7 @@ public class ArticleServiceImpl extends ServiceImpl<ArticleMapper, Article> impl
             articles.forEach(article -> {
                 ArticleDTO articleDTO = new ArticleDTO();
                 // 通过用户id查询用户头像
-                User user = userService.findUserByUserId(article.getAuthorId());
+                User user = userService.selectUserByUserId(article.getAuthorId());
                 articleDTO.setArticleId(article.getArticleId())
                         .setTitle(article.getTitle())
                         .setIntroduction(article.getIntroduction())

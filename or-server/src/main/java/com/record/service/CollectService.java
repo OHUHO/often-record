@@ -13,4 +13,12 @@ import com.baomidou.mybatisplus.extension.service.IService;
  */
 public interface CollectService extends IService<Collect> {
 
+
+    /**
+     * 通过文章id和用户id查询用户的收藏信息
+     * @param articleId
+     * @param authorId
+     * @return
+     */
+    Collect selectCollectByArticleIdAndUserId(Long articleId, Long authorId);
 }

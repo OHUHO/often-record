@@ -10,6 +10,7 @@ import io.swagger.annotations.ApiParam;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
@@ -34,7 +35,7 @@ public class ArticleController {
     @ApiOperation(value = "获取每日推荐")
     @GetMapping("/findArticleFour")
     public Result findArticleFour(){
-        List<ArticleDTO> list = articleService.findArticleFour();
+        List<ArticleDTO> list = articleService.selectArticleFour();
         return Result.success(list);
     }
 
@@ -42,8 +43,15 @@ public class ArticleController {
     @ApiOperation(value = "获取往期精选")
     @GetMapping("/findArticleOderByCollect")
     public Result findArticleOderByCollect(){
-        List<ArticleDTO> list = articleService.findArticleOderByCollect();
+        List<ArticleDTO> list = articleService.selectArticleOderByCollect();
         return Result.success(list);
+    }
+
+    @ApiOperation(value = "通过文章卡片id查找文章")
+    @GetMapping("/findArticleByArticleId")
+    public Result findArticleByArticleId(@RequestParam Long articleId){
+        ArticleDTO article = articleService.selectArticleByArticleId(articleId);
+        return Result.success(article);
     }
 
 

@@ -39,13 +39,19 @@ public class ArticleDTO {
     private String cover;
 
     @ApiModelProperty("文章作者id")
-    private Integer authorId;
+    private Long authorId;
 
     @ApiModelProperty("文章作者昵称")
     private String nickname;
 
     @ApiModelProperty("文章作者头像")
     private String portrait;
+
+    @ApiModelProperty("文章分享链接")
+    private String shareUrl;
+
+    @ApiModelProperty("是否收藏")
+    private Boolean isLike;
 
     @ApiModelProperty("创建时间")
     private String createTime;

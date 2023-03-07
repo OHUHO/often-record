@@ -30,7 +30,7 @@ public interface UserService extends IService<User> {
      * @param authorId
      * @return
      */
-    User findUserByUserId(Integer authorId);
+    User selectUserByUserId(Long authorId);
 
 
 }

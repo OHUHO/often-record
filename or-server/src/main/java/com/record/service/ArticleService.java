@@ -21,14 +21,14 @@ public interface ArticleService extends IService<Article> {
      * 获取每日推荐
      * @return
      */
-    List<ArticleDTO> findArticleFour();
+    List<ArticleDTO> selectArticleFour();
 
 
     /**
      * 获取往期精选
      * @return
      */
-    List<ArticleDTO> findArticleOderByCollect();
+    List<ArticleDTO> selectArticleOderByCollect();
 
 
     /**
@@ -37,4 +37,12 @@ public interface ArticleService extends IService<Article> {
      * @return
      */
     List<ArticleDTO> selectArticlesByTimeId(Long timeId);
+
+
+    /**
+     * 通过文章卡片id查找文章信息
+     * @param articleId
+     * @return
+     */
+    ArticleDTO selectArticleByArticleId(Long articleId);
 }

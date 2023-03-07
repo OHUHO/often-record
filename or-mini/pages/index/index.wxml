@@ -26,7 +26,7 @@
 		clickIndex="1">
 	</look-more>
 	<view class="content daily">
-		<view class="card" wx:for="{{cardList}}" wx:key="index" data-article="{{item}}" bindtap="handleClick">
+		<view class="card" wx:for="{{cardList}}" wx:key="index" data-articleid="{{item.articleId}}" bindtap="handleClick">
 			<view class="card-item">
 				<image class="cover" src="{{item.cover}}" mode="aspectFill"></image>
 				<view class="portrait-wrapper">
