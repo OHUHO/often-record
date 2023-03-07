@@ -36,9 +36,9 @@ Page({
   },
 
   handleClick(e){
-    var article = e.currentTarget.dataset.article
+    var articleid = e.currentTarget.dataset.articleid
       wx.navigateTo({
-        url: '/pages/card/card?article='+JSON.stringify(article),
+        url: '/pages/card/card?articleId=' + articleid,
       })
   },
 

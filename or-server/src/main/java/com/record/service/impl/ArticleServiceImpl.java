@@ -93,6 +93,20 @@ public class ArticleServiceImpl extends ServiceImpl<ArticleMapper, Article> impl
         return null;
     }
 
+    @Override
+    public void articleCollectPlusOne(Long articleId) {
+        Article article = articleMapper.selectById(articleId);
+        article.setCollectNumber(article.getCollectNumber() + 1);
+        articleMapper.updateById(article);
+    }
+
+    @Override
+    public void articleCollectMinusOne(Long articleId) {
+        Article article = articleMapper.selectById(articleId);
+        article.setCollectNumber(article.getCollectNumber() - 1);
+        articleMapper.updateById(article);
+    }
+
 
     /**
      * <p>

@@ -21,4 +21,12 @@ public interface CollectService extends IService<Collect> {
      * @return
      */
     Collect selectCollectByArticleIdAndUserId(Long articleId, Long authorId);
+
+    /**
+     * 文章点赞/取消点赞操作
+     * @param userId
+     * @param articleId
+     * @param isLike
+     */
+    void collect(Long userId, Long articleId, Boolean isLike);
 }

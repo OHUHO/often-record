@@ -45,4 +45,17 @@ public interface ArticleService extends IService<Article> {
      * @return
      */
     ArticleDTO selectArticleByArticleId(Long articleId);
+
+    /**
+     * 文章收藏加一
+     * @param articleId
+     */
+    void articleCollectPlusOne(Long articleId);
+
+
+    /**
+     * 文章收藏减一
+     * @param articleId
+     */
+    void articleCollectMinusOne(Long articleId);
 }

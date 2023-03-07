@@ -39,8 +39,4 @@ public class Collect implements Serializable {
 
     @ApiModelProperty("收藏时间")
     private String createTime;
-
-    @ApiModelProperty("逻辑删除")
-    @TableLogic
-    private Integer isDelete;
 }
