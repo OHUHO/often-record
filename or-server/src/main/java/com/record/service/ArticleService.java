@@ -59,4 +59,18 @@ public interface ArticleService extends IService<Article> {
      * @param articleId
      */
     void articleCollectMinusOne(Long articleId);
+
+
+    /**
+     * 获取每日推荐详情页面
+     * @return
+     */
+    List<ArticleDTO> selectArticleRecent();
+
+
+    /**
+     * 获取往期精选详情页面
+     * @return
+     */
+    List<ArticleDTO> selectOldChoiceness();
 }

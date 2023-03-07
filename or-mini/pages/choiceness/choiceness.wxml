@@ -29,12 +29,12 @@
 </view>
 
 <template name="item">
-	<view class="item" data-id="{{id}}"  bindtap="handleClick">
-		<image class="cover" src="{{imageUrl}}" mode="widthFix"></image>
+	<view class="item" data-articleid="{{articleId}}"  bindtap="handleClick">
+		<image class="cover" src="{{cover}}" mode="widthFix"></image>
 		<text class="title">{{title}}</text>
 		<view class="user">
-			<image class="portrait" src="{{avatar}}"></image>
-			<text class="name">{{name}}</text>
+			<image class="portrait" src="{{portrait}}"></image>
+			<text class="name">{{nickname}}</text>
 			<view class="heart">
 				<text>❤ </text>
 				<text> {{num}}</text>

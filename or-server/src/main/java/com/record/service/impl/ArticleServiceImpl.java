@@ -42,6 +42,7 @@ public class ArticleServiceImpl extends ServiceImpl<ArticleMapper, Article> impl
     public List<ArticleDTO> selectArticleFour() {
         List<Article> articles = articleMapper.selectList(
                 new LambdaQueryWrapper<Article>()
+                        .orderByDesc(Article::getCreateTime)
                         .orderByDesc(Article::getSort)
                         .last("limit 4")
         );
@@ -108,6 +109,31 @@ public class ArticleServiceImpl extends ServiceImpl<ArticleMapper, Article> impl
         Article article = articleMapper.selectById(articleId);
         article.setCollectNumber(article.getCollectNumber() - 1);
         articleMapper.updateById(article);
+    }
+
+    @Override
+    public List<ArticleDTO> selectArticleRecent() {
+
+        List<Article> articles = articleMapper.selectList(
+                new LambdaQueryWrapper<Article>()
+                        .orderByDesc(Article::getCreateTime)
+                        .orderByDesc(Article::getSort)
+                        .last("limit 8")
+        );
+        return tranArticle(articles);
+
+    }
+
+    @Override
+    public List<ArticleDTO> selectOldChoiceness() {
+
+        List<Article> articles = articleMapper.selectList(
+                new LambdaQueryWrapper<Article>()
+                        .orderByDesc(Article::getCollectNumber)
+                        .orderByDesc(Article::getShareNumber)
+                        .orderByDesc(Article::getViewNumber)
+        );
+        return tranArticle(articles);
     }
 
 

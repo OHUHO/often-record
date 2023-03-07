@@ -32,7 +32,7 @@ public class ArticleController {
     private ArticleService articleService;
 
 
-    @ApiOperation(value = "获取每日推荐")
+    @ApiOperation(value = "获取每日推荐(主页)")
     @GetMapping("/findArticleFour")
     public Result findArticleFour(){
         List<ArticleDTO> list = articleService.selectArticleFour();
@@ -40,7 +40,7 @@ public class ArticleController {
     }
 
 
-    @ApiOperation(value = "获取往期精选")
+    @ApiOperation(value = "获取往期精选(主页)")
     @GetMapping("/findArticleOderByCollect")
     public Result findArticleOderByCollect(){
         List<ArticleDTO> list = articleService.selectArticleOderByCollect();
@@ -54,5 +54,18 @@ public class ArticleController {
         return Result.success(article);
     }
 
+    @ApiOperation(value = "获取每日推荐(详细页)")
+    @GetMapping("/findDailyRecommend")
+    public Result findDailyRecommend(){
+        List<ArticleDTO> list = articleService.selectArticleRecent();
+        return Result.success(list);
+    }
 
+
+    @ApiOperation(value = "获取往期精选(详情页)")
+    @GetMapping("/findOldChoiceness")
+    public Result findOldChoiceness(){
+        List<ArticleDTO> list = articleService.selectOldChoiceness();
+        return Result.success(list);
+    }
 }

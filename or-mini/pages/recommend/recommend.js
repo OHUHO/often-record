@@ -1,4 +1,5 @@
 // pages/recommend/recommend.js
+const app = getApp()
 Page({
 
   /**
@@ -7,13 +8,7 @@ Page({
   data: {
     ad:{title:'京茶吉鹿',content:'欢迎家人们访问我的 Github 主页【OHUHO】，创作不易，希望家人们给个 Star',image:'/assets/yellow-man.png'},
 
-    oldList:[
-      {id:1,nickname:'京茶吉鹿',createTime:'昨天',cover:'',title:'会员活动来啦！',introduction:'测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据'},
-      {id:2,nickname:'正经程序员',createTime:'两天前',cover:'/assets/2.jpg',title:'开发戾气',introduction:'测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据'},
-      {id:3,nickname:'行走的人',createTime:'五天前',cover:'/assets/4.png',title:'这个特效可以玩一整天',introduction:'测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测'},
-      {id:4,nickname:'Aubuary',createTime:'三天前',cover:'',title:'先定个小目标，写两行代码',introduction:'测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据'},
-      {id:5,nickname:'我不是程序员',createTime:'三个月前',cover:'/assets/7.jpeg',title:'低代码快速开发，没想到小程序还可以这么玩儿',introduction:'测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数'},
-    ]
+    oldList:[]
   },
 
   /**
@@ -24,7 +19,18 @@ Page({
   },
 
   getRecommend(){
-    
+    var that = this
+    wx.request({
+      url: app.serverUrl + "/findDailyRecommend",
+      method:'GET',
+      success(res){
+        if(res && res.data.data.length > 0){
+          that.setData({
+            oldList: res.data.data
+          })
+        }
+      }
+    })
   }
 
 })
