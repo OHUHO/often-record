@@ -99,6 +99,7 @@
   }
   
   .item {
+    width: 100%;
     background-color: rgba(63, 62, 62,0.6);
     margin-bottom: 20rpx;
     display: inline-block;
