@@ -1,7 +1,10 @@
 package com.record.service;
 
+import com.record.dto.ArticleDTO;
 import com.record.entity.Collect;
 import com.baomidou.mybatisplus.extension.service.IService;
+
+import java.util.List;
 
 /**
  * <p>
@@ -29,4 +32,12 @@ public interface CollectService extends IService<Collect> {
      * @param isLike
      */
     void collect(Long userId, Long articleId, Boolean isLike);
+
+
+    /**
+     * 通过用户id查询用户的收藏
+     * @param userId
+     * @return
+     */
+    List<ArticleDTO> selectCollectByUserId(Long userId);
 }

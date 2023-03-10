@@ -1,6 +1,7 @@
 package com.record.service.impl;
 
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
+import com.record.dto.ArticleDTO;
 import com.record.entity.Collect;
 import com.record.mapper.CollectMapper;
 import com.record.service.ArticleService;
@@ -11,6 +12,8 @@ import org.springframework.stereotype.Service;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.List;
+import java.util.stream.Collectors;
 
 /**
  * <p>
@@ -66,5 +69,21 @@ public class CollectServiceImpl extends ServiceImpl<CollectMapper, Collect> impl
             // 文章收藏减一
             articleService.articleCollectMinusOne(articleId);
         }
+    }
+
+    @Override
+    public List<ArticleDTO> selectCollectByUserId(Long userId) {
+
+        List<Collect> collects = collectMapper.selectList(
+                new LambdaQueryWrapper<Collect>()
+                        .eq(Collect::getUserId, userId)
+        );
+        if (collects.size() > 0){
+            List<Long> articleIds = collects.stream().map(Collect::getArticleId).collect(Collectors.toList());
+
+            // 通过用户id批量查询文章
+            return articleService.selectArticlesByArticleIds(articleIds);
+        }
+        return null;
     }
 }

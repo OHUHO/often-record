@@ -147,6 +147,29 @@ public class ArticleServiceImpl extends ServiceImpl<ArticleMapper, Article> impl
         return tranArticle(articles);
     }
 
+    @Override
+    public List<ArticleDTO> selectArticlesByKeywords(String keywords) {
+
+        List<Article> articles = articleMapper.selectList(
+                new LambdaQueryWrapper<Article>()
+                        .like(Article::getTitle,keywords)
+                        .or()
+                        .like(Article::getIntroduction,keywords)
+                        .or()
+                        .like(Article::getContent, keywords)
+                        .or()
+                        .like(Article::getContentHtml, keywords)
+        );
+        return tranArticle(articles);
+    }
+
+    @Override
+    public List<ArticleDTO> selectArticlesByArticleIds(List<Long> articleIds) {
+
+        List<Article> articles = articleMapper.selectBatchIds(articleIds);
+        return tranArticle(articles);
+    }
+
 
     /**
      * <p>

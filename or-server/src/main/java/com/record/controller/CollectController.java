@@ -1,14 +1,14 @@
 package com.record.controller;
 
+import com.record.dto.ArticleDTO;
 import com.record.service.CollectService;
 import com.record.utils.Result;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PutMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 /**
  * <p>
@@ -37,5 +37,12 @@ public class CollectController {
         return Result.success();
     }
 
+
+    @ApiOperation(value = "通过用户id查找收藏的文章")
+    @GetMapping("/findCollectByUserId")
+    public Result findCollectByUserId(@RequestParam Long userId){
+        List<ArticleDTO> list = collectService.selectCollectByUserId(userId);
+        return Result.success(list);
+    }
 
 }

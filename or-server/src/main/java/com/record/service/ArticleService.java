@@ -81,4 +81,20 @@ public interface ArticleService extends IService<Article> {
      * @return
      */
     List<ArticleDTO> selectArticleBySubjectId(Integer subjectId);
+
+
+    /**
+     * 通过关键词查询文章
+     * @param keywords
+     * @return
+     */
+    List<ArticleDTO> selectArticlesByKeywords(String keywords);
+
+
+    /**
+     * 通过批量文章id查询文章信息
+     * @param articleIds
+     * @return
+     */
+    List<ArticleDTO> selectArticlesByArticleIds(List<Long> articleIds);
 }

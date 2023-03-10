@@ -76,4 +76,12 @@ public class ArticleController {
         List<ArticleDTO> list = articleService.selectArticleBySubjectId(subjectId);
         return Result.success(list);
     }
+
+
+    @ApiOperation(value = "通过关键词搜索文章")
+    @GetMapping("/findArticleByKeywords")
+    public Result findArticleByKeywords(@RequestParam String keywords){
+        List<ArticleDTO> list = articleService.selectArticlesByKeywords(keywords);
+        return Result.success(list);
+    }
 }
