@@ -2,12 +2,12 @@
 <!-- 使用自定义的 navBar -->
 <nav-bar-common navTitle="文章卡片"></nav-bar-common>
 
-<image class="background-image" wx:if="{{article.cover == ''}}" src="/assets/hihihihi.jpg" mode="aspectFill"></image>
+<image class="background-image" wx:if="{{article.cover == null}}" src="/assets/hihihihi.jpg" mode="aspectFill"></image>
 <image class="background-image" src="{{article.cover}}" mode="aspectFill"></image>
 
 <view class="card-wrapper">
     <scroll-view class="card" scroll-y="true">
-        <image class="not-image" wx:if="{{article.cover == ''}}" src="/assets/not-image.png" mode="aspectFit"></image>
+        <image class="not-image" wx:if="{{article.cover == null}}" src="/assets/not-image.png" mode="aspectFit"></image>
         <image class="card-image" wx:else src="{{article.cover}}" mode="aspectFill"></image>
         <view class="card-info">
             <text class="author">{{article.nickname}}</text>

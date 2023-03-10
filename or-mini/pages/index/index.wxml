@@ -28,7 +28,8 @@
 	<view class="content daily">
 		<view class="card" wx:for="{{cardList}}" wx:key="index" data-articleid="{{item.articleId}}" bindtap="handleClick">
 			<view class="card-item">
-				<image class="cover" src="{{item.cover}}" mode="aspectFill"></image>
+				<image class="cover" wx:if="{{item.cover == null}}" src="/assets/not-image.png" mode="aspectFill"></image>
+				<image class="cover" wx:else src="{{item.cover}}" mode="aspectFill"></image>
 				<view class="portrait-wrapper">
 					<image class="portrait-image" src="{{item.portrait}}" mode="aspectFill"></image>
 				</view>

@@ -34,6 +34,7 @@ Page({
           that.setData({
             article: res.data.data
           })
+          // console.log(res.data.data)
         }
       }
     })
