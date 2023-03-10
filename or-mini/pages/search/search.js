@@ -64,10 +64,31 @@ Page({
 
   //清空历史
   clearHistory() {
+    // wx.showModal({
+    //   title: '提示',
+    //   content: '确定清空历史记录？',
+
+    //   complete: (res) => {
+    //     if (res.cancel) {
+          
+    //     }
+    //     if (res.confirm) {
+    //       this.setData({
+    //         list: []
+    //       })
+    //       wx.removeStorageSync('searchHistory')
+    //     }
+    //   }
+    // })
     this.setData({
       list: []
     })
     wx.removeStorageSync('searchHistory')
+    wx.showToast({
+      title: '清除成功！',
+      icon:'none',
+      duration:2000
+    })
   },
 
   getSearchOne(e) {
