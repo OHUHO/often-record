@@ -26,6 +26,7 @@ import java.util.List;
  * @since 2023-03-01 22:40:37
  */
 @Service
+
 public class ArticleServiceImpl extends ServiceImpl<ArticleMapper, Article> implements ArticleService {
 
     @Autowired
@@ -132,6 +133,16 @@ public class ArticleServiceImpl extends ServiceImpl<ArticleMapper, Article> impl
                         .orderByDesc(Article::getCollectNumber)
                         .orderByDesc(Article::getShareNumber)
                         .orderByDesc(Article::getViewNumber)
+        );
+        return tranArticle(articles);
+    }
+
+    @Override
+    public List<ArticleDTO> selectArticleBySubjectId(Integer subjectId) {
+
+        List<Article> articles = articleMapper.selectList(
+                new LambdaQueryWrapper<Article>()
+                        .eq(Article::getSubjectId, subjectId)
         );
         return tranArticle(articles);
     }

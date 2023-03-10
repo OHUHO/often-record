@@ -12,6 +12,7 @@
         <result column="cover" property="cover" />
         <result column="share_url" property="shareUrl" />
         <result column="author_id" property="authorId" />
+        <result column="subject_id" property="subjectId" />
         <result column="time_id" property="timeId" />
         <result column="share_number" property="shareNumber" />
         <result column="collect_number" property="collectNumber" />
@@ -24,7 +25,7 @@
 
     <!-- 通用查询结果列 -->
     <sql id="Base_Column_List">
-        article_id, title, introduction, content, content_html, cover, share_url, author_id, time_id, share_number, collect_number, view_number, sort, status, is_delete, create_time
+        article_id, title, introduction, content, content_html, cover, share_url, author_id, time_id, subject_id, share_number, collect_number, view_number, sort, status, is_delete, create_time
     </sql>
 
 </mapper>

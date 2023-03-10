@@ -6,9 +6,7 @@ import com.record.utils.Result;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -36,4 +34,11 @@ public class SubjectController {
         return Result.success(subjects);
     }
 
+
+    @ApiOperation(value = "通过专题id查询专题信息")
+    @GetMapping("/findSubjectBySubjectId")
+    public Result findSubjectBySubjectId(@RequestParam Long subjectId){
+        Subject subject = subjectService.getById(subjectId);
+        return Result.success(subject);
+    }
 }

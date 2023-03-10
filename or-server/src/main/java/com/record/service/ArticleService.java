@@ -73,4 +73,12 @@ public interface ArticleService extends IService<Article> {
      * @return
      */
     List<ArticleDTO> selectOldChoiceness();
+
+
+    /**
+     * 通过专题id查询文章信息
+     * @param subjectId
+     * @return
+     */
+    List<ArticleDTO> selectArticleBySubjectId(Integer subjectId);
 }

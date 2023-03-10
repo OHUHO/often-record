@@ -68,4 +68,12 @@ public class ArticleController {
         List<ArticleDTO> list = articleService.selectOldChoiceness();
         return Result.success(list);
     }
+
+
+    @ApiOperation(value = "通过专题id查询文章")
+    @GetMapping("/findArticleBySubjectId")
+    public Result findArticleBySubjectId(@RequestParam Integer subjectId){
+        List<ArticleDTO> list = articleService.selectArticleBySubjectId(subjectId);
+        return Result.success(list);
+    }
 }

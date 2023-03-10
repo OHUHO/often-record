@@ -56,6 +56,9 @@ public class Article implements Serializable {
     @ApiModelProperty("时间线id")
     private Integer timeId;
 
+    @ApiModelProperty("专题id")
+    private Integer subjectId;
+
     @ApiModelProperty("分享次数")
     private Long shareNumber;
 

@@ -20,9 +20,9 @@ Page({
   },
 
   handleClick(e){
-    var name = e.currentTarget.dataset.name
+    var subjectid = e.currentTarget.dataset.subjectid
     wx.navigateTo({
-      url: '/pages/subject/subject?name=' + name,
+      url: '/pages/subject/subject?subjectId=' + subjectid,
     })
   },
   getList(){
