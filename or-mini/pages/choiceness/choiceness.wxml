@@ -30,7 +30,8 @@
 
 <template name="item">
 	<view class="item" data-articleid="{{articleId}}"  bindtap="handleClick">
-		<image class="cover" src="{{cover}}" mode="widthFix"></image>
+		<image class="cover" wx:if="{{cover == null}}" src="/assets/not-image.png" mode="widthFix"></image>
+		<image class="cover" wx:else src="{{cover}}" mode="widthFix"></image>
 		<text class="title">{{title}}</text>
 		<view class="user">
 			<image class="portrait" src="{{portrait}}"></image>

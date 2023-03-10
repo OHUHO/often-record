@@ -16,6 +16,7 @@ Page({
     this.setData({
       articles:JSON.parse(articles)
     })
-    console.log(this.data.articles)
+    // console.log(this.data.articles)
+
   },
 })
