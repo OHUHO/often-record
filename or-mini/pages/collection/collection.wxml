@@ -2,8 +2,32 @@
 <nav-bar-common navTitle="我的收藏"></nav-bar-common>
 
 <view class="collection-wrapper">
-
+	<view class="main">
+		<view class="left">
+			<block wx:for="{{list}}" wx:key="index">
+				<template wx:if="{{index%2==0}}" is="item" data="{{...item}}"></template>
+			</block>
+		</view>
+		<view class="right">
+			<block wx:for="{{list}}" wx:key="index">
+				<template wx:if="{{index%2==1}}" is="item" data="{{...item}}"></template>
+			</block>
+		</view>
+	</view>
 </view>
 
-
-
+<template name="item">
+	<view class="item" data-articleid="{{articleId}}"  bindtap="handleClick">
+		<image class="cover" wx:if="{{cover == null}}" src="/assets/not-image.png" mode="widthFix"></image>
+		<image class="cover" wx:else src="{{cover}}" mode="widthFix"></image>
+		<text class="title">{{title}}</text>
+		<view class="user">
+			<image class="portrait" src="{{portrait}}"></image>
+			<text class="name">{{nickname}}</text>
+			<view class="heart">
+				<text>❤ </text>
+				<text> {{num}}</text>
+			</view>
+		</view>
+	</view>
+</template>

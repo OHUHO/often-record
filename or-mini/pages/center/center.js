@@ -42,9 +42,20 @@ Page({
   hanleManage(e){
     var index = e.currentTarget.dataset.index
     if(index == 1){
-      wx.navigateTo({
-        url:'/pages/collection/collection',
-      })
+      const userInfo = wx.getStorageSync('userInfo')
+      // console.log(userInfo !='')
+      if(userInfo != ''){
+        wx.navigateTo({
+          url:'/pages/collection/collection',
+        })
+      }else{
+        wx.showToast({
+          title: '您暂未登录！',
+          icon: 'error',
+          duration: 2000,
+        })
+      }
+      
     }else{
       wx.navigateTo({
         url: '/pages/wechat/wechat',

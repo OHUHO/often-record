@@ -1,19 +1,40 @@
 // pages/collection/collection.js
+const app = getApp()
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    list:[]
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad(options) {
-
+    this.getCollect()
   },
+
+  getCollect(){
+    var that = this
+    var userId = wx.getStorageSync('userInfo').userId
+    // console.log()
+    if(userId != undefined && userId != null && userId != ''){
+      wx.request({
+        url: app.serverUrl + '/findCollectByUserId?userId=' + userId,
+        method: 'GET',
+        success(res){
+          if(res && res.data.data.length > 0){
+            that.setData({
+              list:res.data.data
+            })
+          }
+        }
+      })
+    }
+  },
+  
 
   /**
    * 生命周期函数--监听页面初次渲染完成

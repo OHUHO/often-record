@@ -4,3 +4,73 @@
     flex-direction: column;
     margin: 180rpx 24rpx 0rpx 24rpx;
 }
+.main {
+    text-align: justify;
+    /* background-color: red; */
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+  
+.left, 
+.right {
+    display: inline-block;
+    vertical-align: top;
+    width: 48%;
+}
+  
+.item {
+    width: 100%;
+    background-color: rgba(63, 62, 62,0.6);
+    margin-bottom: 20rpx;
+    display: inline-block;
+    border-radius: 20rpx;
+    overflow: hidden;
+}
+  
+.cover {
+    width: 100%
+}
+  
+.title {
+    font-size: 30rpx;
+    font-weight: 600;
+    color: rgb(184, 181, 181);
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+    margin: 20rpx 15rpx;
+}
+.user {
+    display: flex;
+    align-items: center;
+    font-size: 26rpx;
+    font-weight: 600;
+    color: rgb(137, 136, 136);
+    margin: 0rpx 15rpx 20rpx 15rpx;
+
+}
+.portrait {
+    width: 40rpx;
+    height: 40rpx;
+    border-radius: 20rpx;
+}
+.name {
+    flex: 1;
+    margin-left: 18rpx;
+    margin-right: 20rpx;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+    overflow: hidden;
+}
+  
+.heart {
+    height: 26rpx;
+    margin-right: 8rpx;
+    display: flex;
+    align-items: center;
+}

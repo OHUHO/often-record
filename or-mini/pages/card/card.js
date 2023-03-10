@@ -69,7 +69,7 @@ Page({
     console.log("userInfo",userInfo=='')
     if(userInfo == ''){
       wx.showToast({
-        title: '您还未登录',
+        title: '您暂未登录！',
         icon:'error',
         duration: 2000,
       })
