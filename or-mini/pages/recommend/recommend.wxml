@@ -10,6 +10,6 @@
         <image class="image" src="{{ad.image}}" mode="aspectFill"></image>
     </view>
     <view>
-        <line-card oldList="{{oldList}}"></line-card>
+        <line-card list="{{oldList}}"></line-card>
     </view>
 </view>

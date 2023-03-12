@@ -1,3 +1,7 @@
 {
-  "usingComponents": {}
+  "usingComponents": {
+    "nav-bar-common":"/components/nav-bar-common/index",
+    "line-card":"/components/line-card/line-card"
+  },
+  "navigationStyle": "custom"
 }

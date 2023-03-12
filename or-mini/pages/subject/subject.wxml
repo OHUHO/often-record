@@ -2,5 +2,5 @@
 <nav-bar-common navTitle="{{navTitle}}"></nav-bar-common>
 
 <view class="subject-wrapper">
-    <line-card oldList="{{articles}}"></line-card>
+    <line-card list="{{articles}}"></line-card>
 </view>

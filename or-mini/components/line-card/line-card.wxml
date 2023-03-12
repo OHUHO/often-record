@@ -1,6 +1,6 @@
 <!--components/line-card/line-card.wxml-->
 
-<view class="block" wx:for="{{oldList}}" wx:key="index" data-articleid="{{item.articleId}}" bindtap="handleClick">
+<view class="block" wx:for="{{list}}" wx:key="index" data-articleid="{{item.articleId}}" bindtap="handleClick">
     <view class="block-title">{{item.title}}</view>
     
     <view wx:if="{{item.cover}}" class="block-content-image">

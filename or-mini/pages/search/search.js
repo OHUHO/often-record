@@ -31,6 +31,9 @@ Page({
         list: this.data.list.slice(0, 15)
       })
       wx.setStorageSync('searchHistory', JSON.stringify(this.data.list))
+      
+      this.getSearchResult(data)
+
     }
   },
 
@@ -47,6 +50,7 @@ Page({
       search: va
     })
     // 从后端查找数据
+    this.getSearchResult(this.data.search)
 
     // 将标签存到历史搜索中
     this.data.list.forEach((item, index) => {
@@ -97,7 +101,10 @@ Page({
     this.setData({
       search: va
     })
-    console.log(va)
+
+    // console.log(va)
+    this.getSearchResult(this.data.search)
+
     this.data.list.forEach((item, index) => {
       if (item == va) {
         this.data.list.splice(index, 1);
@@ -107,8 +114,18 @@ Page({
     this.setData({
       list: this.data.list.slice(0, 15)
     })
-    console.log(this.data.list)
+    // console.log(this.data.list)
     wx.setStorageSync('searchHistory', JSON.stringify(this.data.list))
+  },
+
+  getSearchResult(keywords){
+    // console.log("keywords",keywords)
+    wx.navigateTo({
+      url: '/pages/searchDetails/searchDetails?keywords=' + keywords,
+    })
+    this.setData({
+      search: ''
+    })
   }
 
 })

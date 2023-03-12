@@ -8,6 +8,6 @@
         <text class="describe">{{articles.describe}}</text>
     </view>
     <view>
-        <line-card oldList="{{articles.articles}}"></line-card>
+        <line-card list="{{articles.articles}}"></line-card>
     </view>
 </view>

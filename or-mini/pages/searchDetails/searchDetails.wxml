@@ -1,2 +1,6 @@
 <!--pages/searchDetails/searchDetails.wxml-->
-<text>pages/searchDetails/searchDetails.wxml</text>
+<nav-bar-common navTitle="历史记录"></nav-bar-common>
+
+<view class="search-details-wrapper">
+	<line-card list="{{articles}}"></line-card>
+</view>

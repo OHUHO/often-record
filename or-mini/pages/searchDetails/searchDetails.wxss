@@ -1,1 +1,6 @@
 /* pages/searchDetails/searchDetails.wxss */
+.search-details-wrapper{
+	display: flex;
+	flex-direction: column;
+	margin: 180rpx 24rpx 0rpx 24rpx;
+}
