@@ -9,6 +9,7 @@
     "pages/choiceness/choiceness",
     "pages/card/card",
     "pages/search/search",
+    "pages/searchDetails/searchDetails",
     "pages/date/tate",
     "pages/subject/subject",
     "pages/collection/collection",
