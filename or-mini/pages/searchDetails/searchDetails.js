@@ -14,7 +14,7 @@ Page({
    */
   onLoad(options) {
     var keywords = options.keywords
-    console.log(keywords)
+    // console.log(keywords)
 
     var that = this
     wx.request({

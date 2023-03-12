@@ -47,6 +47,6 @@
 		clickIndex="2">
 	</look-more>
 	<view class="content old">
-		<line-card oldList="{{oldList}}"></line-card>
+		<line-card list="{{oldList}}"></line-card>
 	</view>
 </view>
